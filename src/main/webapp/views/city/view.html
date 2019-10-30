@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail City</title>
+</head>
+<body>
+<h1>Detail city</h1>
+<p><a href="/city/list">Back to city list</a></p>
+<div>
+    <label>Name:</label>
+    <label th:text="${city.getName()}"></label>
+</div>
+<div>
+    <label>Country:</label>
+    <label th:text="${city.country.name}"></label>
+</div>
+<div>
+    <label>Area:</label>
+    <label th:text="${city.getArea()}"></label>
+</div>
+<div>
+    <label>Population:</label>
+    <label th:text="${city.getPopulation()}"></label>
+</div>
+<div>
+    <label>GDP:</label>
+    <label th:text="${city.getGdp()}"></label>
+</div>
+<div>
+    <label>Introduction:</label>
+    <label th:text="${city.getIntroduction()}"></label>
+</div>
+</body>
+</html>
+</body>
+</html>
