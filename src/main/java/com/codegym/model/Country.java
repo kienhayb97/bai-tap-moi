@@ -35,5 +35,13 @@ public class Country {
 
     public void setName(String name) {
         this.name = name;
+
+    }
+    public List<City> getCity() {
+        return cityList;
+    }
+
+    public void setCityList(List<City> cityList) {
+        this.cityList = cityList;
     }
 }

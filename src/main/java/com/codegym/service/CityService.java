@@ -13,5 +13,6 @@ public interface CityService {
 
     void remove(Long id);
     Page<City> findAllByNameContaining(String name, Pageable pageable);
+    Page<City> findByOrderByAreaAsc(Pageable pageable);
 
 }

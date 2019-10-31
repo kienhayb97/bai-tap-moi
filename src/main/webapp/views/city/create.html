@@ -9,14 +9,15 @@
 <p>
     <a href="/city/list">Back to city list</a>
 </p>
-<th:block th:if="${message}">
-    <p th:text="${message}"></p>
-</th:block>
-<form th:action="@{/city/save}" th:object="${city}" method="post">
+<!--<th:block th:if="${message}">-->
+<!--    <p th:text="${message}"></p>-->
+<!--</th:block>-->
+<form th:action="@{/city/save}"  method="post" th:object="${city}" enctype="multipart/form-data">
     <table>
         <tr>
             <td>Name:</td>
-            <td><input type="text" th:field="*{name}"/></td>
+            <td><input type="text" th:field="*{name}"></td>
+<!--            <td><input type="text" th:field="*{name}"/></td>-->
         </tr>
         <td>Country:</td>
         <td>
@@ -40,7 +41,10 @@
             <td>Introduction:</td>
             <td><input type="text" th:field="*{introduction}"/></td>
         </tr>
-
+        <tr>
+            <td>Image:</td>
+            <td><input type="file" th:field="*{image}"/></td>
+        </tr>
         <tr>
             <td></td>
             <td><input type="submit" value="Create city"></td>

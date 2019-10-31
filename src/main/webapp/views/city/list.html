@@ -13,6 +13,7 @@
     <input type="text" name ="s">
     <input type="submit" value="Search"/>
 </form>
+<a th:href="@{/city/sapxep}">sap xep</a>
 <table border="1">
     <tr>
         <th>Name</th>
@@ -21,11 +22,12 @@
         <th>Population</th>
         <th>GDP</th>
         <th>Introduction</th>
+        <th>Image</th>
         <th>Edit</th>
         <th>Delete</th>
         <th>Detail</th>
     </tr>
-    <th:block th:each="city: ${city}">
+    <th:block th:each="city: ${cities}">
         <tr>
             <td th:text="${city.name}"></td>
             <td th:text="${city.getCountry().name}"></td>
@@ -33,6 +35,7 @@
             <td th:text="${city.population}"></td>
             <td th:text="${city.gdp}"></td>
             <td th:text="${city.introduction}"></td>
+            <td><img width="200px" height="200px" th:src="@{'/i/' + ${city.image}}"></td>
             <td><a th:href="@{/city/edit/__${city.id}__}">Edit</a></td>
             <td><a th:href="@{/city/delete/__${city.id}__}">Delete</a></td>
             <td><a th:href="@{/city/view/__${city.id}__}">Detail</a></td>
@@ -40,9 +43,11 @@
     </th:block>
 </table>
 <div>
-    <a th:href="@{'/city/list'(page=${city.number - 1})}" th:if="${city.hasPrevious()}">Previous</a>
-    <span th:text="${city.number + 1}"></span>/<span th:text="${city.totalPages}"></span>
-    <a th:href="@{'/city/list'(page=${city.number + 1})}" th:if="${city.hasNext()}">Next</a>
+
+    <a th:href="@{'/city/list'(page=${cities.number - 1})}" th:if="${cities.hasPrevious()}">Previous</a>
+    <span th:text="${cities.number + 1}"></span>/<span th:text="${cities.totalPages}"></span>
+    <a th:href="@{'/city/list'(page=${cities.number + 1})}" th:if="${cities.hasNext()}">Next</a>
 </div>
+
 </body>
 </html>

@@ -7,4 +7,5 @@ package com.codegym.repository;
 
 public interface CityRepository extends PagingAndSortingRepository<City, Long> {
     Page<City> findAllByNameContaining(String name, Pageable pageable);
+    Page<City> findByOrderByAreaAsc(Pageable pageable);
 }

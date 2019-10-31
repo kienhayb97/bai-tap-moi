@@ -10,7 +10,7 @@
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
-<form th:action="@{/city/update}" th:object="${city}" method="post">
+<form th:action="@{/city/update}" th:object="${city}" method="post" enctype="multipart/form-data" >
     <input th:type="hidden" th:field="*{id}">
     <table>
         <tr>
@@ -41,6 +41,13 @@
         <tr>
             <td>Introduction:</td>
             <td><input type="text" th:field="*{introduction}"></td>
+        </tr>
+        <tr>
+            <td>Image:</td>
+            <td><img width="200px" height="200px" th:src="@{'/i/' + ${city.image}}"></td>
+        </tr>
+        <tr>
+            <td><input type="file" th:field="*{image}"/></td>
         </tr>
         <tr>
             <td></td>

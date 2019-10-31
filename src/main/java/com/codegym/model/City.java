@@ -18,17 +18,27 @@ public class City {
     private Double population;
     private Long gdp;
     private String introduction;
+    private String image;
 
     public City() {
     }
 
-    public City(Country country, String name, Double area, Double population, Long gdp, String introduction) {
+    public City(Country country, String name, Double area, Double population, Long gdp, String introduction, String image) {
         this.country = country;
         this.name = name;
         this.area = area;
         this.population = population;
         this.gdp = gdp;
         this.introduction = introduction;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Long getId() {

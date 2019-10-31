@@ -15,6 +15,12 @@ public class CityServiceImpl implements CityService {
     public Page<City> findAllByNameContaining(String name, Pageable pageable) {
         return cityRepository.findAllByNameContaining(name, pageable);
     }
+
+    @Override
+    public Page<City> findByOrderByAreaAsc(Pageable pageable) {
+        return cityRepository.findByOrderByAreaAsc(pageable);
+    }
+
     @Override
     public Page<City> findAll(Pageable pageable) {
         return cityRepository.findAll(pageable);
